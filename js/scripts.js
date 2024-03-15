@@ -21,7 +21,6 @@ function buscarReceitas() {
 }
 
 function processarListaRecebida(resposta) {
-    console.log(resposta);
     receitas = resposta.data;
     renderizarReceitas();
 }
@@ -54,8 +53,18 @@ function receberResposta(resposta) {
     buscarReceitas();
 }
 
-function mostrarErro() {
-    alert("Ocorreu um erro, tente novamente mais tarde!");
+function mostrarErro(erro) {
+    switch(erro.response.status) {
+        case 422:
+            alert("Verifique se você preencheu todos os campos da receita!");
+            break;
+        case 409:
+            alert("Uma receita com esse título já existe! Escolha outro nome.");
+            break;
+        default:
+            alert("Ocorreu um erro desconhecido, tente novamente mais tarde!");
+            break;
+    }
 }
 
 // Funções que são executadas ao abrir o site
