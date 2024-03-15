@@ -17,16 +17,7 @@
     <!-- Menu Lateral -->
     <div class="sidebar">
       <div class="titulo">Tastecamp</div>
-      <ul class="receitas">
-        <li>
-          <ion-icon name="fast-food-outline"></ion-icon>
-          Strogonoff
-        </li>
-        <li>
-          <ion-icon name="fast-food-outline"></ion-icon>
-          Lasanha
-        </li>
-      </ul>
+      <ul class="receitas"></ul>
     </div>
 
     <div class="view">
@@ -85,7 +76,7 @@
           <textarea class="modo-preparo-receita"></textarea>
         </div>
 
-        <button class="salvar">
+        <button class="salvar" onclick="adicionarReceita()">
           <ion-icon name="save"></ion-icon>
           Adicionar receita
         </button>
@@ -96,6 +87,9 @@
 
   <script type="module" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule="" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  
   <script src="js/scripts.js"></script>
 </body>
 
